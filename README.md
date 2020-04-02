@@ -21,7 +21,7 @@ npm i ruty
 
 ## Usage
 
-```js
+```ts
 import { route } from "ruty";
 
 const routes = {
@@ -44,16 +44,18 @@ routes.userById({ id: 123, created: true, sort: "desc" });
 
 You can type your route params and queries string with TypeScript by adding generics to the `build` method as shown below:
 
-```js
-import { route } from 'ruty'
+```ts
+import { route } from "ruty";
 
 const routes = {
-  userById: route("/user/:id?created&sort").build<
-    { id: number, created: boolean, sort: "asc" | "desc" }
-  >()
-}
+  userById: route("/user/:id?created&sort").build<{
+    id: number;
+    created: boolean;
+    sort: "asc" | "desc";
+  }>()
+};
 
-routes.userById({ id: 123, created: true, sort: "desc" })
+routes.userById({ id: 123, created: true, sort: "desc" });
 // '/user/123?created&sort=desc'
 ```
 
@@ -69,7 +71,7 @@ If you want to contribute to development please follow these instructions:
 2.  Install dependencies with `npm i`.
 3.  Add your changes, make sure to include tests.
 
-Tests can be run with `npm t`.
+Tests can be run with `npm t`. If you want to run tests in watch mode use: `npm t -- --watch`. Also, if you want to run tests coverage use: `npm t -- --coverage`.
 
 ---
 
