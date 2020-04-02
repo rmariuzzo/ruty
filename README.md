@@ -22,21 +22,21 @@ npm i ruty
 ## Usage
 
 ```ts
-import { route } from "ruty";
+import { route } from 'ruty'
 
 const routes = {
-  home: route("/").build(),
-  users: route("/users").build(),
-  userById: route("/user/:id?created&sort").build()
-};
+  home: route('/').build(),
+  users: route('/users').build(),
+  userById: route('/user/:id?created&sort').build(),
+}
 
-routes.home();
+routes.home()
 // '/'
-routes.users();
+routes.users()
 // '/users'
-routes.userById({ id: 123 });
+routes.userById({ id: 123 })
 // '/user/123'
-routes.userById({ id: 123, created: true, sort: "desc" });
+routes.userById({ id: 123, created: true, sort: 'desc' })
 // '/user/123?created&sort=desc'
 ```
 
@@ -45,17 +45,17 @@ routes.userById({ id: 123, created: true, sort: "desc" });
 You can type your route params and queries string with TypeScript by adding generics to the `build` method as shown below:
 
 ```ts
-import { route } from "ruty";
+import { route } from 'ruty'
 
 const routes = {
-  userById: route("/user/:id?created&sort").build<{
-    id: number;
-    created: boolean;
-    sort: "asc" | "desc";
-  }>()
-};
+  userById: route('/user/:id?created&sort').build<{
+    id: number
+    created: boolean
+    sort: 'asc' | 'desc'
+  }>(),
+}
 
-routes.userById({ id: 123, created: true, sort: "desc" });
+routes.userById({ id: 123, created: true, sort: 'desc' })
 // '/user/123?created&sort=desc'
 ```
 
@@ -72,6 +72,10 @@ If you want to contribute to development please follow these instructions:
 3.  Add your changes, make sure to include tests.
 
 Tests can be run with `npm t`. If you want to run tests in watch mode use: `npm t -- --watch`. Also, if you want to run tests coverage use: `npm t -- --coverage`.
+
+## Release
+
+Releases are done with: `npm run release`.
 
 ---
 
