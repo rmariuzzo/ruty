@@ -50,6 +50,10 @@ routes.userById({ id: 123, created: true, sort: "desc" })
 // '/user/123?created&sort=desc'
 ```
 
+Then you will have autocomplete suggestions and type assertion:
+
+![TypeScript example](.github/typescript.gif)
+
 ## Development
 
 If you want to contribute to development please follow these instructions:
