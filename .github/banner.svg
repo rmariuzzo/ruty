@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1006 242">
+    <defs>
+        <linearGradient x1="50%" y1="10.562%" x2="50%" y2="90.279%" id="a">
+            <stop stop-color="#314B82" offset="0%"/>
+            <stop stop-color="#021F4C" offset="100%"/>
+        </linearGradient>
+        <rect id="b" x="0" y="0" width="1002" height="238" rx="40"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(2 2)">
+            <rect stroke="#FFF" stroke-width="20" stroke-linejoin="square" fill="url(#a)" x="10" y="10" width="982" height="218" rx="40"/>
+            <use stroke="#2F3E56" stroke-width="4" xlink:href="#b"/>
+        </g>
+        <text font-family="Baskerville-Bold, Baskerville" font-size="92" font-weight="bold" letter-spacing="-4" fill="#FFF" transform="translate(2 2)">
+            <tspan x="343.847" y="122">R U T </tspan>
+            <tspan x="594.903" y="122">Y</tspan>
+        </text>
+        <text font-family="Baskerville-Bold, Baskerville" font-size="37" font-weight="bold" fill="#FFF" transform="translate(2 2)">
+            <tspan x="113.975" y="185">A SIMPLE URL ROUTE BUILDER LIBRARY</tspan>
+        </text>
+    </g>
+</svg>

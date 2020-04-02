@@ -1,4 +1,4 @@
-# ruty
+# ![Ruty](.github/banner.svg)
 
 Ruty is a simple URL route builder, that [support typing route params and queries string with TypeScript](#typescript).
 
