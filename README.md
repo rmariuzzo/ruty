@@ -6,6 +6,13 @@ Ruty is a simple URL route builder, that [support typing route params and querie
 
 _Whether I am working in the frontend or backend, I always define a set of URLs wether for API endpoints or page URLs. Therefore, instead of having all these URLs routes spread out within multiple files, I prefer to have them defined in one file then reference them where I need them. Also, using TypeScript I prefere to have my URLs routes params and queries string typed. **That's the reason I created**_ **`ruty`** _**, a tiny library that allow me to define routes with their params and queries strings.**_
 
+## Features
+
+- TypeScript support.
+- Typed route params `/:param` and typed query strings `?query&string`.
+- No dependencies.
+- 100% test coverage.
+
 ## Installation
 
 ```sh

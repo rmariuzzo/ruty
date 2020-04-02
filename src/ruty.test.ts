@@ -52,6 +52,12 @@ describe("ruty", () => {
       );
     });
 
+    it("should generate a route equal to the given path with query string during building", () => {
+      const path = "/path?query";
+      const routeInstance = route(path).build();
+      expect(routeInstance()).toBe(path);
+    });
+
     it("should generate a route with given query string", () => {
       const path = "/path?query";
       const routeInstance = route(path).build<{ query: string }>();
