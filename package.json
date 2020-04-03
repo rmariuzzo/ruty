@@ -2,13 +2,13 @@
   "name": "ruty",
   "version": "1.0.2",
   "description": "Ruty is a simple URI route builder.",
-  "main": "dist/ruty.js",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
     "test": "jest",
-    "preversion": "tsc",
+    "preversion": "tsc && ncc build ./dist/ruty.js -o dist --minify",
     "release": "np"
   },
   "repository": {
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/rmariuzzo/ruty#readme",
   "devDependencies": {
     "@types/jest": "^25.1.4",
+    "@zeit/ncc": "^0.22.0",
     "husky": "^4.2.3",
     "jest": "^25.2.6",
     "np": "^6.2.0",

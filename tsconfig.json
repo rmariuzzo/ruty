@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "UMD",
+    "target": "ES2015",
+    "module": "CommonJS",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -10,5 +10,5 @@
     "declaration": true,
     "moduleResolution": "node"
   },
-  "exclude": ["node_modules", "**/*.test.*", "dist"]
+  "include": ["./src/ruty.ts"]
 }

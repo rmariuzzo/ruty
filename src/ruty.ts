@@ -1,20 +1,33 @@
-const addParams = (path: string, params: { [key: string]: string } = {}) => {
-  return path.replace(/:(\w+)/g, (token, key) => params[key] || token)
-}
+import { route } from './route'
+import { paramTransformer } from './param-transformer'
+import { queryTransformer } from './query-transformer'
 
-const addQueries = (path: string, queries: { [key: string]: string } = {}) => {
-  return path.replace(/[?&](\w+)/g, (token, key) =>
-    queries[key] === undefined ? token : `${token}=${queries[key]}`
-  )
-}
-
-export const route = <Path extends string = string>(path: Path) => {
-  const build = <ParamsAndQueries extends { [key: string]: any } = {}>() => {
-    const routeBuilder = (paramsAndQueries?: ParamsAndQueries) => {
-      return addQueries(addParams(path, paramsAndQueries), paramsAndQueries)
-    }
-    routeBuilder.path = path
-    return routeBuilder
+export type RutyConfig<
+  GlobalParams = {
+    [key: string]: any | (() => any)
+  },
+  GlobalQuery = {
+    [key: string]: any | (() => any)
   }
-  return { build }
+> = {
+  prefix?: string
+  paramTransformer?: (name: string, value: any) => string
+  queryTransformer?: (name: string, value: any) => string
+  params?: GlobalParams
+  query?: GlobalQuery
+}
+
+const defaultConfig: RutyConfig<any, any> = {
+  paramTransformer,
+  queryTransformer,
+}
+
+export const Ruty = {
+  configure: <GlobalParams, GlobalQuery>(
+    config: RutyConfig<GlobalParams, GlobalQuery> = defaultConfig
+  ) => {
+    return {
+      route: (path: string) => route(path, config),
+    }
+  },
 }

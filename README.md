@@ -22,7 +22,9 @@ npm i ruty
 ## Usage
 
 ```ts
-import { route } from 'ruty'
+import { Ruty } from 'ruty'
+
+const { route } = Ruty.configure()
 
 const routes = {
   home: route('/').build(),
@@ -47,6 +49,8 @@ You can type your route params and queries string with TypeScript by adding gene
 ```ts
 import { route } from 'ruty'
 
+Ruty.configure()
+
 const routes = {
   userById: route('/user/:id?created&sort').build<{
     id: number
@@ -62,6 +66,29 @@ routes.userById({ id: 123, created: true, sort: 'desc' })
 Then you will have autocomplete suggestions and type assertion:
 
 ![TypeScript example](.github/typescript.gif)
+
+## Configuration
+
+Any configuration is passed to `Ruty.configure(...)`.
+
+```ts
+const ruty = Ruty.configure({
+  // 👇 Add a prefix to all genrated routes.
+  prefix: '/:language',
+  // 👇 A function that transform the value for route params. Not yet implemented.
+  paramTransformer: (param, value) => value,
+  // 👇 A function that transform the value for query strings. Not yet implemented.
+  queryTransformer: (query, value) => value,
+  // 👇 Global route params. Not yet implemented.
+  params: {
+    language: () => detectLanguage(),
+  },
+  // 👇 Global query string. Not yet implemented.
+  query: {
+    theme: 'dark',
+  },
+})
+```
 
 ## Development
 
