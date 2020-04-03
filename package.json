@@ -1,6 +1,6 @@
 {
   "name": "ruty",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Ruty is a simple URI route builder.",
   "main": "dist/ruty.js",
   "files": [
