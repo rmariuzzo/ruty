@@ -17,9 +17,21 @@ describe('addParams', () => {
     expect(addParams(undefined, path, { param })).toBe(`/path/${param}`)
   })
 
+  it('should return path with param when param is given as a function', () => {
+    const path = '/path/:param'
+    const param = () => 123
+    expect(addParams(undefined, path, { param })).toBe(`/path/${param()}`)
+  })
+
   it('should return path with param when global param is given', () => {
     const path = '/path/:globalParam'
     const globalParam = 456
     expect(addParams({ params: { globalParam } }, path)).toBe(`/path/${globalParam}`)
+  })
+
+  it('should return path with param when global param is given as a function', () => {
+    const path = '/path/:globalParam'
+    const globalParam = () => 456
+    expect(addParams({ params: { globalParam } }, path)).toBe(`/path/${globalParam()}`)
   })
 })

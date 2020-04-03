@@ -17,9 +17,21 @@ describe('addQuery', () => {
     expect(addQuery(undefined, path, { query })).toBe(path + '=' + query)
   })
 
+  it('should return path with query when query is given as a function', () => {
+    const path = '/path?query'
+    const query = () => 123
+    expect(addQuery(undefined, path, { query })).toBe(path + '=' + query())
+  })
+
   it('should return path with query when global query is given', () => {
     const path = '/path?globalQuery'
     const globalQuery = 456
     expect(addQuery({ query: { globalQuery } }, path)).toBe(path + '=' + globalQuery)
+  })
+
+  it('should return path with query when global query is given as a function', () => {
+    const path = '/path?globalQuery'
+    const globalQuery = () => 456
+    expect(addQuery({ query: { globalQuery } }, path)).toBe(path + '=' + globalQuery())
   })
 })

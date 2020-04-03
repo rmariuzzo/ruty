@@ -27,7 +27,7 @@ export const Ruty = {
     config: RutyConfig<GlobalParams, GlobalQuery> = defaultConfig
   ) => {
     return {
-      route: (path: string) => route(path, config),
+      route: (path: string) => route(`${config.prefix ?? ''}${path}`, config),
     }
   },
 }

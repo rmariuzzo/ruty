@@ -1,3 +1,4 @@
-export const paramTransformer = (name: string, value: any) => {
-  return value === undefined ? name : value
+export const paramTransformer = (name: string, value: any): string => {
+  const paramValue = typeof value === 'function' ? value() : value
+  return paramValue === undefined ? name : paramValue
 }

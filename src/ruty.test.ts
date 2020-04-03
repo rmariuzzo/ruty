@@ -14,4 +14,11 @@ describe('Ruty', () => {
     expect(ruty.route).toEqual(expect.any(Function))
     expect(ruty.route('/path')).toMatchObject({ build: expect.any(Function) })
   })
+
+  it('should create an instance with a prefixed route', () => {
+    const prefix = '/prefix'
+    const path = '/path'
+    const ruty = Ruty.configure({ prefix })
+    expect(ruty.route(path).build().path).toBe(prefix + path)
+  })
 })
