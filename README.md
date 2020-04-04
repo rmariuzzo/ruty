@@ -75,15 +75,15 @@ Any configuration is passed to `Ruty.configure(...)`.
 const ruty = Ruty.configure({
   // 👇 Add a prefix to all genrated routes.
   prefix: '/:language',
-  // 👇 A function that transform the value for route params. Not yet implemented.
+  // 👇 A function that transform the value for route params.
   paramTransformer: (param, value) => value,
-  // 👇 A function that transform the value for query strings. Not yet implemented.
+  // 👇 A function that transform the value for query strings.
   queryTransformer: (query, value) => value,
-  // 👇 Global route params. Not yet implemented.
+  // 👇 Global route params.
   params: {
     language: () => detectLanguage(),
   },
-  // 👇 Global query string. Not yet implemented.
+  // 👇 Global query string.
   query: {
     theme: 'dark',
   },
