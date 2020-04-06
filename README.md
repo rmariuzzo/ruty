@@ -1,10 +1,10 @@
 # [![Ruty](.github/banner.svg)](#motivation)
 
-Ruty is a simple URL route builder, that [support typing route params and queries string with TypeScript](#typescript).
+Ruty is a simple URL route builder, that [supports typing route params and queries string with TypeScript](#typescript).
 
 #### Motivation
 
-_Whether I am working in the frontend or backend, I always define a set of URLs wether for API endpoints or page URLs. Therefore, instead of having all these URLs routes spread out within multiple files, I prefer to have them defined in one file then reference them where I need them. Also, using TypeScript I prefere to have my URLs routes params and queries string typed. **That's the reason I created**_ **`ruty`** _**, a tiny library that allow me to define routes with their params and queries strings.**_
+_Whether I am working in the frontend or backend, I always define a set of URLs for API endpoints or page URLs. Therefore, instead of having all these URLs routes spread out within multiple files, I prefer to have them defined in one file then reference them where I need them. Also, while using TypeScript I prefer to have my URLs routes params and queries string typed. **That's the reason I created**_ **`ruty`** _**, a tiny library that allows me to define routes with their params and queries strings.**_
 
 ## Features
 
@@ -92,7 +92,7 @@ const ruty = Ruty.configure({
 
 ## Development
 
-If you want to contribute to development please follow these instructions:
+If you want to contribute to this project please follow these instructions:
 
 1.  Clone this repo.
 2.  Install dependencies with `npm i`.
