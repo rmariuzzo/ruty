@@ -1,6 +1,6 @@
 {
   "name": "ruty",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Ruty is a simple URI route builder.",
   "keywords": [
     "uri",
